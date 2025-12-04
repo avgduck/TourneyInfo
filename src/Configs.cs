@@ -10,6 +10,7 @@ public class Configs
     internal static ConfigEntry<string> TourneyName { get; private set; }
     internal static ConfigEntry<string> TourneyDescriptionLine1 { get; private set; }
     internal static ConfigEntry<string> TourneyDescriptionLine2 { get; private set; }
+    internal static ConfigEntry<bool> UseCustomLogo { get; private set; }
     
     internal static ConfigEntry<string> ModpackVersion { get; private set; }
     
@@ -22,6 +23,7 @@ public class Configs
         TourneyName = config.Bind<string>("Tourney Info", "TourneyName", "LAN Tourney");
         TourneyDescriptionLine1 = config.Bind<string>("Tourney Info", "TourneyDescriptionLine1", "LLB Stadium");
         TourneyDescriptionLine2 = config.Bind<string>("Tourney Info", "TourneyDescriptionLine2", "discord.gg/llbstadium");
+        UseCustomLogo = config.Bind<bool>("Tourney Info", "UseCustomLogo", true);
         
         config.Bind("gap", "mm_header_gap", 50, new ConfigDescription("", null, "modmenu_gap"));
         config.Bind("Headers", "mm_header_modpack", "Modpack Info", new ConfigDescription("", null, "modmenu_header"));
@@ -30,7 +32,7 @@ public class Configs
         
         ModDependenciesUtils.RegisterToModMenu(Plugin.Instance.Info, [
             "Allows you to display a custom description, name, and logo for your tournament",
-            "The logo file must be named 'logo.png' and should be placed in the TourneyInfo Modding Folder"
+            "The logo file must be a png or jpg image, and should be placed in the TourneyInfo Modding Folder"
         ]);
     }
 }

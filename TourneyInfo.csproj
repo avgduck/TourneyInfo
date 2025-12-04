@@ -48,5 +48,10 @@
             <_BuildFiles Include="build\*.*" />
         </ItemGroup>
         <Copy SourceFiles="@(_BuildFiles)" DestinationFolder="C:\Users\Owner\AppData\Roaming\r2modmanPlus-local\LethalLeagueBlaze\profiles\Dev\BepInEx\plugins\TourneyInfo" />
+
+        <ItemGroup>
+            <_AssetFiles Include="assets\*.png" />
+        </ItemGroup>
+        <Copy SourceFiles="@(_AssetFiles)" DestinationFolder="C:\Users\Owner\AppData\Roaming\r2modmanPlus-local\LethalLeagueBlaze\profiles\Dev\BepInEx\plugins\TourneyInfo\assets" />
     </Target>
 </Project>

@@ -19,5 +19,7 @@ public class Plugin : BaseUnityPlugin
         
         Configs.Init();
         HarmonyPatches.PatchAll();
+        
+        LogoIO.Init();
     }
 }
