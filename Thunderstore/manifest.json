@@ -1,0 +1,9 @@
+{
+  "name": "TourneyInfo",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/avgduck/TourneyInfo",
+  "description": "Displays information about the current tourney on the menu, for LAN setups",
+  "dependencies": [
+    "Glomzubuk-LLBModdingLib-0.10.4"
+  ]
+}

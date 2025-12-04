@@ -41,6 +41,17 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+        <_ReleaseFiles Include="Thunderstore\icon.png" />
+        <_ReleaseFiles Include="Thunderstore\manifest.json" />
+        <_ReleaseFiles Include="README.md" />
+        <_ReleaseFiles Include="CHANGELOG.md" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="preview-images\" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Copy SourceFiles="bin\Debug\net35\TourneyInfo.dll" DestinationFolder="build" />
 
@@ -53,5 +64,9 @@
             <_AssetFiles Include="assets\*.png" />
         </ItemGroup>
         <Copy SourceFiles="@(_AssetFiles)" DestinationFolder="C:\Users\Owner\AppData\Roaming\r2modmanPlus-local\LethalLeagueBlaze\profiles\Dev\BepInEx\plugins\TourneyInfo\assets" />
+
+        <Copy SourceFiles="@(_BuildFiles)" DestinationFolder="release" />
+        <Copy SourceFiles="@(_ReleaseFiles)" DestinationFolder="release" />
+        <Copy SourceFiles="@(_AssetFiles)" DestinationFolder="release/BepInEx/plugins/assets" />
     </Target>
 </Project>
