@@ -1,6 +1,6 @@
 ## [TourneyInfo](https://thunderstore.io/c/lethal-league-blaze/p/avg_duck/TourneyInfo/)
 
-Changes the player display on the main menu to show info about the current tournament, including a custom name, description, and logo. This mod also shows the current version of the tourney modpack, if applicable.
+Changes the player display on the main menu to show info about the current tournament, including a custom name, description, and logo.
 
 When no custom logo is specified, the LLB Stadium logo will be used.
 
