@@ -40,24 +40,23 @@ internal static class LogoIO
 
     private static Texture2D LoadImageFile(FileInfo file)
     {
-        Plugin.LogGlobal.LogInfo($"Loading image file: {file.FullName}");
+        //Plugin.LogGlobal.LogInfo($"Loading image file: {file.FullName}");
         using FileStream fileStream = file.OpenRead();
         using MemoryStream memoryStream = new MemoryStream();
-        {
-            CopyStream(fileStream, memoryStream);
-            Texture2D tex = new Texture2D(1, 1);
-            tex.LoadImage(memoryStream.ToArray());
-            return tex;
-        }
+        
+        CopyStream(fileStream, memoryStream);
+        Texture2D tex = new Texture2D(1, 1);
+        tex.LoadImage(memoryStream.ToArray());
+        return tex;
     }
 
     private static void UpdateLogoDefault()
     {
-        Plugin.LogGlobal.LogInfo($"Loading default logo file from path: {LogoDirectoryDefault.FullName}");
+        //Plugin.LogGlobal.LogInfo($"Loading default logo file from path: {LogoDirectoryDefault.FullName}");
         IOrderedEnumerable<FileInfo> files = LogoDirectoryDefault.GetFiles().OrderBy(f => f.Name);
         if (!files.Any())
         {
-            Plugin.LogGlobal.LogWarning("No default logo file exists");
+            //Plugin.LogGlobal.LogWarning("No default logo file exists");
             LogoDefault = null;
             return;
         }
@@ -69,11 +68,11 @@ internal static class LogoIO
 
     internal static void UpdateLogoCustom()
     {
-        Plugin.LogGlobal.LogInfo($"Loading custom logo file from path: {LogoDirectoryCustom.FullName}");
+        //Plugin.LogGlobal.LogInfo($"Loading custom logo file from path: {LogoDirectoryCustom.FullName}");
         IOrderedEnumerable<FileInfo> files = LogoDirectoryCustom.GetFiles().OrderBy(f => f.Name);
         if (!files.Any())
         {
-            Plugin.LogGlobal.LogWarning("No custom logo file exists");
+            //Plugin.LogGlobal.LogWarning("No custom logo file exists");
             LogoCustom = null;
             return;
         }
