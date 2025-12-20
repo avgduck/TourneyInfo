@@ -12,8 +12,6 @@ public class Configs
     internal static ConfigEntry<string> TourneyDescriptionLine2 { get; private set; }
     internal static ConfigEntry<bool> UseCustomLogo { get; private set; }
     
-    internal static ConfigEntry<string> ModpackVersion { get; private set; }
-    
     internal static void Init()
     {
         config = Plugin.Instance.Config;
@@ -24,11 +22,6 @@ public class Configs
         TourneyDescriptionLine1 = config.Bind<string>("Tourney Info", "TourneyDescriptionLine1", "LLB Stadium");
         TourneyDescriptionLine2 = config.Bind<string>("Tourney Info", "TourneyDescriptionLine2", "discord.gg/llbstadium");
         UseCustomLogo = config.Bind<bool>("Tourney Info", "UseCustomLogo", true);
-        
-        config.Bind("gap", "mm_header_gap", 50, new ConfigDescription("", null, "modmenu_gap"));
-        config.Bind("Headers", "mm_header_modpack", "Modpack Info", new ConfigDescription("", null, "modmenu_header"));
-
-        ModpackVersion = config.Bind<string>("Modpack Info", "ModpackVersion", "");
         
         ModDependenciesUtils.RegisterToModMenu(Plugin.Instance.Info, [
             "Allows you to display a custom description, name, and logo for your tournament",

@@ -27,9 +27,6 @@ internal static class HarmonyPatches
                 __instance.UpdatePlayerInfo();
             };
             __instance.lbLevel.enableWordWrapping = false;
-
-            __instance.lbVersion.overflowMode = TextOverflowModes.Overflow;
-            __instance.lbVersion.enableWordWrapping = false;
         }
         
         [HarmonyPatch(typeof(ScreenMenu), nameof(ScreenMenu.UpdatePlayerInfo))]
@@ -39,15 +36,6 @@ internal static class HarmonyPatches
             __instance.btAccount.SetText(Configs.TourneyName.Value, -1, true);
             
             TextHandler.SetText(__instance.lbLevel,$"{Configs.TourneyDescriptionLine1.Value}\n{Configs.TourneyDescriptionLine2.Value}");
-
-            if (string.IsNullOrEmpty(Configs.ModpackVersion.Value))
-            {
-                TextHandler.SetText(__instance.lbVersion, $"V{JPLELOFJOOH.MDGMBEMFDJK}");
-            }
-            else
-            {
-                TextHandler.SetText(__instance.lbVersion, $"Modpack v{Configs.ModpackVersion.Value}");
-            }
 
             if (LogoIO.LogoCustom != null && Configs.UseCustomLogo.Value)
             {
